@@ -8,13 +8,26 @@ import { Button } from '@/components/ui/button'
 import { clients, products } from '@/lib/constant'
 import { CheckIcon } from 'lucide-react'
 import Image from 'next/image'
+import BrandsSlider from '@/components/global/BrandsSlider'
+import Footer from '@/components/global/Footer'
+import dynamic from 'next/dynamic';
+import { HeroTypeWritter } from '@/components/global/HeroTypeWritter'
+
+import { CardStack } from '@/components/ui/CardStack'
+import { HeroHighlightDemo } from '@/components/global/HeroHighlightDemo'
+import Testimonals from '@/components/global/Testimonals'
+import AboutUs from '@/components/global/AboutUs'
+import Faq from '@/components/global/Faq'
+
 
 export default function Home() {
   //WIP: remove fault IMAge for home page
+  
   return (
-    <main className="flex items-center justify-center flex-col">
+    <main className="flex items-center justify-center overflow-x-hidden flex-col bg-black">
       <Navbar />
-      <section className="h-screen w-full  bg-neutral-950 rounded-md 
+
+      {/* <section className="h-screen w-full  bg-neutral-950 rounded-md 
        !overflow-visible relative flex flex-col items-center  antialiased">
         <div className="absolute inset-0  h-full w-full items-center px-5
          py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_35%,#223_100%)]"></div>
@@ -32,7 +45,7 @@ export default function Home() {
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r
                    from-neutral-500 to-neutral-600  md:text-center font-sans
-                    group-hover:bg-gradient-to-r group-hover:from-black goup-hover:to-black">
+                    group-hover:bg-gradient-to-r group-hover:from-black group-hover:to-black">
                     Start For Free Today
                   </span>
                 </Button>
@@ -44,17 +57,22 @@ export default function Home() {
             }
           />
         </div>
-      </section>
-
+      </section> */}
+<section>
+  <HeroHighlightDemo/>
+</section>
+<section>
+{/* <AboutUs/> */}
+</section>
       <InfiniteMovingCards
         className="md:mt-[28rem] mt-[-100px]"
         items={clients}
         direction="right"
         speed="slow"
       />
-      <section>
+      {/* <section>
         <HeroParallax products={products}></HeroParallax>
-      </section>
+      </section> */}
 
       <section className="mt-[-1px]">
         <LampComponent />
@@ -203,6 +221,11 @@ export default function Home() {
           </CardContainer>
         </div>
       </section>
+      {/* <CardStack items={CARDS} /> */}
+
+ <Faq/>
+ <Testimonals/>
+      <Footer/>
     </main>
   )
 }
